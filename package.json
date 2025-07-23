@@ -2,7 +2,6 @@
   "name": "cloudrun-iap-sample",
   "version": "1.0.0",
   "main": "main.js",
-  "type": "module",
   "scripts": {
     "start": "node main.js"
   },
