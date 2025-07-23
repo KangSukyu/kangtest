@@ -1,18 +1,18 @@
-const express = require('express');
-const app = express();
+const express = require('express')
+const app = express()
 
 app.get('/', (req, res) => {
-  const jwt = req.header('X-Goog-IAP-JWT-Assertion');
+  const jwt = req.header('X-Goog-IAP-JWT-Assertion')
   res.send(`
     <html>
       <body>
         <code>${jwt ? jwt : "No JWT header"}</code>
       </body>
     </html>
-  `);
-});
+  `)
+})
 
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`);
-});
+const PORT = process.env.PORT || 8080
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`App listening on port ${PORT}`)
+})
