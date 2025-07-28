@@ -4,6 +4,12 @@ const { OAuth2Client } = require("google-auth-library");
 const app = express();
 const client = new OAuth2Client();
 
+// 2. CORS オプション 設定
+const corsOptions = {
+  origin: 'https://kangtest0725.duckdns.org',　// フロントエンドアドレスのみ許可
+  optionsSuccessStatus: 200 // 一部のレガシーブラウザのための設定
+};
+
 // IAPのJWTを検証し、メールアドレスを抽出する関数
 async function validateIapJwt(iapJwt) {
   // 1. IAPの設定から「Audience」（対象）の値を見つける必要があります。
