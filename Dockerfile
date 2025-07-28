@@ -1,19 +1,18 @@
 # ベースのイメージ
-FROM node:20
+FROM node:20-slim
 
 # アプリディレクトリ作成
 WORKDIR /usr/src/app
 
 # 従属性の設置
 COPY package*.json ./
-RUN npm install
+RUN npm install --only=production
 
 # アプリコードコピー
 COPY . .
 
 # Cloud Run ポート
 ENV PORT=8080
-EXPOSE 8080
 
 # アプリ実行
-CMD ["npm", "start"]
+CMD [ "node", "server.js" ]
