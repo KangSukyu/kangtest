@@ -1,6 +1,6 @@
 async function fetchBackendData() {
   // ★★★ バックエンドCloud RunのURLをここに入力してください ★★★
-  const backendUrl = 'https://your-backend-service-url.a.run.app/api/data';
+  const backendUrl = 'https://cloudrun-backend-sample-1084961019166.asia-northeast1.run.app';
   const outputDiv = document.getElementById('response-output');
   
   outputDiv.textContent = 'バックエンドを呼び出し中...';
